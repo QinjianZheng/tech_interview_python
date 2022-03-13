@@ -11,8 +11,9 @@ class Solution:
         return min(b - a for a, b in zip(nums[:4], nums[-4:]))
 
 
-A = [5, 3, 2, 4]
-B = [1, 5, 0, 10, 14]
-s = Solution()
-print(s.minDifference(A))
-print(s.minDifference(B))
+if __name__ == '__main__':
+    A = [5, 3, 2, 4]
+    B = [1, 5, 0, 10, 14]
+    s = Solution()
+    print(s.minDifference(A))
+    print(s.minDifference(B))
