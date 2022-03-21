@@ -65,10 +65,18 @@ class Solution:
         candidate = interception_set.pop()
         return min(len(tops) - tops.count(candidate), len(tops) - bottoms.count(candidate))
 
+    def minDominoRotations4(self, tops: List[int], bottoms: List[int]) -> int:
+        interception_set = {tops[0], bottoms[0]}
+        for i in range(1, len(tops)):
+            interception_set &= {tops[i], bottoms[i]}
+        if not interception_set:
+            return -1
+        candidate = interception_set.pop()
+        return min(len(tops) - tops.count(candidate), len(tops) - bottoms.count(candidate))
 
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.minDominoRotations3([2, 1, 2, 4, 2, 2], [5, 2, 6, 2, 3, 2]) == 2)
-    print(s.minDominoRotations3([3, 5, 1, 2, 3], [3, 6, 3, 3, 4]) == -1)
-    print(s.minDominoRotations3([1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1]) == 0)
+    print(s.minDominoRotations4([2, 1, 2, 4, 2, 2], [5, 2, 6, 2, 3, 2]) == 2)
+    print(s.minDominoRotations4([3, 5, 1, 2, 3], [3, 6, 3, 3, 4]) == -1)
+    print(s.minDominoRotations4([1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1]) == 0)
