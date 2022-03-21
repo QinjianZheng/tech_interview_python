@@ -19,7 +19,8 @@ class Solution:
                 hotel_book[room_num] = 1
             else:
                 hotel_book[room_num] += 1
-            if (hotel_book[max_room] == hotel_book[room_num] and room_num < max_room) or hotel_book[max_room] < hotel_book[room_num]:
+            if (hotel_book[max_room] == hotel_book[room_num] and room_num < max_room) \
+                    or hotel_book[max_room] < hotel_book[room_num]:
                 # update max or lexico smaller
                 max_room = room_num
         print(hotel_book)
